@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BasicView.h"
+#import "AppDelegate.h"
 
 @implementation ViewController
 
@@ -41,7 +42,7 @@
     [basicView.presentButton addTarget:self action:@selector(presentPressed) forControlEvents:UIControlEventTouchUpInside];
     [basicView.dismissButton addTarget:self action:@selector(dismissPressed) forControlEvents:UIControlEventTouchUpInside];
     
-    NSLog(@"load view - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }
 
 
@@ -49,27 +50,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"view did load - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"view will appear - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }    
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    NSLog(@"view did appear - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }
 
 - (void)viewWillLayoutSubviews
 {
-    NSLog(@"view will layout subviews - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));    
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }
 
 - (void)viewDidLayoutSubviews
 {
-    NSLog(@"view did layout subviews - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }
 
 - (void)viewDidUnload
@@ -94,7 +95,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    NSLog(@" -- SHOULD AUTO ROTATE TO INTERFACE ORIENTATION --- ");
+    [AppDelegate logEvent:__PRETTY_FUNCTION__];
     // Return YES for supported orientations
 	return YES;
 }
@@ -102,29 +103,29 @@
 // Notifies when rotation begins, reaches halfway point and ends.
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    NSLog(@"will rotate to interface orientation - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    NSLog(@"did rotate to interface orientation - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));    
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }
 
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-       NSLog(@"will animate rotation to interface orientation - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds)); 
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }
 
 - (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    NSLog(@"will animate first half of rotation to interface orientation - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));    
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];   
 }
 - (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
-    NSLog(@"did animate first half of rotation to interface orientation - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));    
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }
 - (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    NSLog(@"did animate second half of rotation to interface orientation - frame: %@ bounds: %@", NSStringFromCGRect(self.view.frame), NSStringFromCGRect(self.view.bounds));
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.view.bounds andViewFrame:self.view.frame];
 }
 @end

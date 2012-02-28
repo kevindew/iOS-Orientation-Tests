@@ -7,6 +7,7 @@
 //
 
 #import "BasicView.h"
+#import "AppDelegate.h"
 
 @implementation BasicView
 
@@ -40,7 +41,7 @@
 
 - (void)layoutSubviews 
 {
-    NSLog(@"layout subviews - frame %@ bounds %@", NSStringFromCGRect(self.frame), NSStringFromCGRect(self.bounds));
+    [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.bounds andViewFrame:self.frame];
 }
 
 @end
