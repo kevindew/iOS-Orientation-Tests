@@ -41,7 +41,15 @@
 
 - (void)layoutSubviews 
 {
+//    CGRect frame = self.dismissButton.frame;    
+//    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+//    if (orientation == UIInterfaceOrientationPortrait || orientation == UIInterfaceOrientationPortraitUpsideDown) {
+//        self.dismissButton.frame = CGRectMake(self.bounds.size.width - frame.size.width, self.bounds.size.height - frame.size.height, frame.size.width, frame.size.height);
+//    } else {
+//        self.dismissButton.frame = CGRectMake(200, 10, frame.size.width, frame.size.height);        
+//    }
     [AppDelegate logMethod:__PRETTY_FUNCTION__ withSender:self withViewBounds:self.bounds andViewFrame:self.frame];
+
 }
 
 @end

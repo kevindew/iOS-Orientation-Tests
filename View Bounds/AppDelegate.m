@@ -28,6 +28,29 @@
     NSLog(@"Method: %s Sender: %@ View Bounds: %@ View Frame: %@", functionName, sender, NSStringFromCGRect(bounds), NSStringFromCGRect(frame));    
 }
 
++ (void)logMethod:(const char *)functionName withSender: (id)sender withViewBounds: (CGRect)bounds andViewFrame: (CGRect)frame andOrientation: (UIInterfaceOrientation) orientation
+{
+    
+    NSString *orientationString = @"Unknown";
+    
+    switch (orientation) {
+        case UIInterfaceOrientationPortrait:
+            orientationString = @"UIInterfaceOrientationPortrait";
+            break;
+        case UIInterfaceOrientationPortraitUpsideDown:
+            orientationString = @"UIInterfaceOrientationPortraitUpsideDown";
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+            orientationString = @"UIInterfaceOrientationLandscapeLeft";
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            orientationString = @"UIInterfaceOrientationLandscapeRight";
+            break;
+    }
+    
+    NSLog(@"Method: %s Sender: %@ View Bounds: %@ View Frame: %@ Orientation: %@", functionName, sender, NSStringFromCGRect(bounds), NSStringFromCGRect(frame), orientationString);    
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [AppDelegate logEvent:__PRETTY_FUNCTION__];
@@ -35,6 +58,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.rootViewController = [[ViewController alloc] init];
+    ViewController *viewController = (ViewController *) self.window.rootViewController;
+    viewController.canRotateToLandscape = YES;
     [self.window makeKeyAndVisible];
     return YES;
 }

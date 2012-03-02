@@ -15,5 +15,8 @@
 + (void)logEvent:(const char *)functionName;
 + (void)logMethod:(const char *)functionName withSender: (id)sender;
 + (void)logMethod:(const char *)functionName withSender: (id)sender withViewBounds: (CGRect)bounds andViewFrame: (CGRect)frame;
++ (void)logMethod:(const char *)functionName withSender: (id)sender withViewBounds: (CGRect)bounds andViewFrame: (CGRect)frame andOrientation: (UIInterfaceOrientation) orientation;
+
+
 
 @end
